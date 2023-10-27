@@ -7,6 +7,6 @@ interface Props {
 const { classes, id } = Astro.props
 ---
 
-<article class={`max-w-7xl mx-auto p-3 ${classes}`} id={id}>
+<article class={`max-w-7xl mx-auto px-3 py-1 md:py-3 ${classes}`} id={id}>
   <slot />
 </article>
