@@ -1,0 +1,99 @@
+---
+import Intro from "./Intro.astro"
+---
+
+<article class="mt-20" id="contact">
+  <Intro
+    title="Contact Me"
+    subtitle="How to connect?"
+    paragraph="Contact me to explore collaboration and make your creative visions a reality. Your journey to animated storytelling starts here."
+  />
+
+  <form
+    data-aos="zoom-in"
+    action="#"
+    class="grid max-w-2xl gap-4 py-12 mx-3 md:mx-auto bg-gray-100 rounded-lg px-7 -mb-56 relative z-10 mt-16"
+  >
+    <h4 class="mb-4 text-3xl font-bold text-clr-primary">Get In Touch</h4>
+    <input type="text" name="name" placeholder="Name" required class="input" />
+    <input
+      type="email"
+      name="email"
+      placeholder="Email"
+      required
+      class="input"
+    />
+    <textarea
+      name="message"
+      rows="7"
+      placeholder="Message"
+      required
+      class="resize-none input"></textarea>
+    <button
+      type="submit"
+      class="flex items-center gap-3 mx-auto px-5 pt-3 pb-2 mt-4 font-bold text-white uppercase transition duration-200 ease-in-out rounded-md bg-[#ffc930] hover:bg-[#ffc930]/80"
+      ><span>Send</span><i class="pb-1 fa-solid fa-paper-plane fa-beat"
+      ></i></button
+    >
+  </form>
+</article>
+
+<style>
+  .input {
+    @apply border-2 border-clr-yellow/40 p-2 indent-1 rounded-md placeholder-clr-primary/40 outline-clr-yellow;
+  }
+</style>
+
+<script>
+  import emailjs from "@emailjs/browser"
+
+  const form = document.querySelector("form") as HTMLFormElement
+
+  const PUBLIC_KEY = "iJHbIADqKvyjazkno"
+  const SERVICE_ID = "service_8i21xcq"
+  const TEMPLATE_ID = "template_05pdfse"
+
+  const handleSubmit = (e: Event) => {
+    e.preventDefault()
+
+    const name = document.querySelector(
+      "input[name='name']"
+    ) as HTMLInputElement
+    const email = document.querySelector(
+      "input[name='email']"
+    ) as HTMLInputElement
+    const message = document.querySelector(
+      "textarea[name='message']"
+    ) as HTMLTextAreaElement
+
+    emailjs
+      .send(
+        SERVICE_ID,
+        TEMPLATE_ID,
+        {
+          from_name: name.value,
+          to_name: "Sadhna",
+          from_email: email.value,
+          to_email: "sadhnakaithwas28@gmail.com",
+          message: message.value,
+        },
+        PUBLIC_KEY
+      )
+      .then(
+        () => {
+          alert("Thank You! I'll get back to you as soon as possible.")
+
+          name.value = ""
+          email.value = ""
+          message.value = ""
+        },
+        (error) => {
+          console.log(error)
+
+          alert("Something went wrong.")
+        }
+      )
+  }
+
+  form.addEventListener("submit", (e) => handleSubmit(e))
+</script>

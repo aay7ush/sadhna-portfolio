@@ -1,0 +1,17 @@
+---
+interface Props {
+  name: string
+  icon: string
+  href?: string
+}
+
+const { name, icon, href } = Astro.props
+---
+
+<a
+  href={href}
+  class="mt-2 flex gap-3 items-center font-bold rounded-full text-clr-blue border-2 border-clr-blue py-2.5 px-6 w-fit transition duration-300 hover:bg-clr-blue hover:text-white cursor-pointer"
+>
+  <span>{name}</span>
+  <i class={icon}></i></a
+>

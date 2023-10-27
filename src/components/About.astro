@@ -1,0 +1,39 @@
+---
+import { Image } from "astro:assets"
+import Intro from "./Intro.astro"
+import MainContent from "./MainContent.astro"
+import Wrapper from "./Wrapper.astro"
+---
+
+<Wrapper classes="mt-20 lg:mt-0" id="about">
+  <Intro
+    title="About Me"
+    subtitle="Who Am I?"
+    paragraph="Delve deeper into my journey, where the fusion of storytelling and technology defines my creative path."
+  />
+  <section class="grid items-center gap-10 lg:grid-cols-2 -mt-20">
+    <div data-aos="fade-right" class="xl:w-[50rem] lg:-ml-20">
+      <Image
+        src="/about.svg"
+        alt="about image"
+        width={800}
+        height={600}
+        class="mx-auto"
+      />
+    </div>
+
+    <MainContent
+      title="Storyboard Animator"
+      buttonName="Download CV"
+      buttonIcon="fa-solid fa-angle-down fa-bounce"
+    >
+      Celebrating life through animation in the vibrant heart of India. I'm a
+      storyboard animator at <span class="text-clr-yellow font-medium"
+        >ZICA (Zee Institue of Creative Art)</span
+      > and a <span class="text-clr-yellow font-medium"
+        >BCom (Computer Applications)</span
+      > student, weaving creativity and technology into my narrative. Explore my
+      portfolio to experience the stories I bring to life.
+    </MainContent>
+  </section>
+</Wrapper>

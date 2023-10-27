@@ -1,0 +1,12 @@
+---
+interface Props {
+  classes?: string
+  id?: string
+}
+
+const { classes, id } = Astro.props
+---
+
+<article class={`max-w-7xl mx-auto p-3 ${classes}`} id={id}>
+  <slot />
+</article>

@@ -1,0 +1,19 @@
+---
+interface Props {
+  title: string
+  subtitle: string
+  paragraph?: string
+}
+
+const { title, subtitle, paragraph } = Astro.props
+---
+
+<section class="text-center space-y-1 mb-28">
+  <h2 class="text-xl xl:text-2xl text-clr-primary dark:text-white">
+    {subtitle}
+  </h2>
+  <h3 class="text-4xl xl:text-5xl text-clr-yellow font-bold">{title}</h3>
+  <p class="max-w-4xl mx-auto">
+    {paragraph}
+  </p>
+</section>

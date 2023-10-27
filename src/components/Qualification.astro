@@ -1,0 +1,83 @@
+---
+import Education from "./Education.astro"
+import Intro from "./Intro.astro"
+import Wrapper from "./Wrapper.astro"
+---
+
+<Wrapper classes="mt-20" id="qualification">
+  <Intro
+    title="Qualification"
+    subtitle="What I Did?"
+    paragraph="My qualifications are a testament to my dedication and expertise, reflecting a blend of formal education and hands-on experience that fuels my creative endeavors."
+  />
+
+  <div class="grid gap-20 lg:gap-0 lg:grid-cols-2">
+    <div data-aos="fade-right" class="space-y-10">
+      <h2
+        class="text-4xl xl:text-5xl font-bold text-clr-primary text-center dark:text-white"
+      >
+        <i class="uil uil-briefcase-alt pr-5 text-6xl"></i>
+        <span>Experience</span>
+      </h2>
+
+      <div class="flex gap-5 items-start">
+        <p class="bg-clr-blue text-white px-3 py-5 rounded-full">2023</p>
+
+        <div class="space-y-2">
+          <h4 class="text-3xl text-clr-yellow font-medium">
+            Storyboard Animator
+          </h4>
+          <div
+            class="text-clr-primary flex gap-3 items-center font-medium dark:text-white"
+          >
+            <div class="w-16 h-1 rounded-sm bg-clr-primary dark:bg-white"></div>
+            <p>ZICA (Zee Institue of Creative Art)</p>
+          </div>
+          <p>
+            Contributed to captivating visual storytelling, crafting narratives
+            and collaborating in a dynamic team.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div data-aos="fade-left" class="space-y-10">
+      <h2
+        class="text-4xl xl:text-5xl font-bold text-clr-primary text-center dark:text-white"
+      >
+        <i class="uil uil-graduation-cap pr-5 text-6xl"></i>
+        <span>Education</span>
+      </h2>
+
+      <div class="space-y-16">
+        <Education
+          year={2024}
+          education="BCom (Computer Applications)"
+          institution="Govt. Post Graduate College, Ambala"
+          description="Completed a Bachelor of Commerce with a focus on Computer Applications, gaining a strong foundation in both business and technology."
+          connect
+        />
+        <Education
+          year={2023}
+          education="Visual Effects, 3D Animation & Character Animation"
+          institution="MAAC Ambala"
+          description="Specialized training in Visual Effects, 3D Animation, and Character Animation, honing skills in bringing digital worlds and characters to life."
+          connect
+        />
+        <Education
+          year={2021}
+          education="12th - Commerce with Mathematics"
+          institution="Govt. Sr. Sec. School"
+          description="Successfully completed 12th grade with a focus on Commerce and Mathematics, building a strong academic base for further studies."
+          connect
+        />
+        <Education
+          year={2019}
+          education="10th - HBSE Board"
+          institution="Govt. Sr. Sec. School"
+          description="Achieved academic success in 10th grade under the Haryana Board of School Education, laying the groundwork for future educational endeavors."
+        />
+      </div>
+    </div>
+  </div>
+</Wrapper>

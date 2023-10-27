@@ -1,0 +1,32 @@
+---
+import Wrapper from "./Wrapper.astro"
+---
+
+<footer class="bg-clr-blue text-white pt-80">
+  <!-- TODO: Add jump to top button -->
+  <Wrapper>
+    <hr class="border border-gray-100 mb-5" />
+    <div class="flex flex-col gap-7 md:flex-row justify-between items-center">
+      <div class="flex gap-5 justify-center md:order-2">
+        <a
+          href="https://www.instagram.com/sadhna.kaithwas/"
+          target="_blank"
+          class="text-2xl transition duration-300 hover:text-clr-yellow"
+        >
+          <i class="uil uil-instagram text-4xl"></i>
+        </a>
+
+        <a
+          href="https://twitter.com/KaithwasSadhna"
+          target="_blank"
+          class="text-2xl transition duration-300 hover:text-clr-yellow"
+        >
+          <i class="uil uil-twitter-alt text-4xl"></i>
+        </a>
+      </div>
+      <p>
+        &copy; Copyright {new Date().getFullYear()}. All Rights Reserved.
+      </p>
+    </div>
+  </Wrapper>
+</footer>

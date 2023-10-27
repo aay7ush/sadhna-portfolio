@@ -1,0 +1,22 @@
+---
+import { Image } from "astro:assets"
+import MainContent from "./MainContent.astro"
+import Wrapper from "./Wrapper.astro"
+---
+
+<Wrapper
+  classes="grid gap-10 lg:grid-cols-2 items-center min-h-[calc(100vh-76px)] lg:mt-5"
+>
+  <div data-aos="fade-left" class="xl:w-[50rem] lg:-ml-20 mx-auto lg:order-2">
+    <Image src="/hero.svg" alt="hero image" width={1600} height={1200} />
+  </div>
+  <MainContent
+    title="Sadhna Kaithwas"
+    buttonName="Say Hi"
+    buttonIcon="fa-regular fa-comment fa-shake"
+  >
+    A creative storyboard animator with a passion for bringing stories to life
+    through visuals and motion. Let's collaborate to turn your ideas into
+    captivating animated narratives!
+  </MainContent>
+</Wrapper>

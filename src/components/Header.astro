@@ -1,0 +1,113 @@
+---
+import Wrapper from "./Wrapper.astro"
+---
+
+<header class="bg-clr-blue text-white sticky top-0 z-30">
+  <Wrapper classes="flex justify-between items-center">
+    <a href="#" class="text-3xl font-bold">Sadhna</a>
+
+    <nav
+      id="nav"
+      class="hidden absolute bg-clr-blue py-14 px-32 top-24 left-1/2 -translate-x-1/2 lg:block font-medium rounded-xl md:static md:p-0 md:-translate-x-0"
+    >
+      <ul
+        class="flex flex-col md:flex-row items-center gap-8 text-2xl md:gap-20"
+      >
+        <li class="nav-link">
+          <a href="#about">About</a>
+        </li>
+        <li class="nav-link">
+          <a href="#skills">Skills</a>
+        </li>
+        <li class="nav-link">
+          <a href="#qualification">Qualification</a>
+        </li>
+        <li class="mt-2 md:hidden">
+          <a
+            href="#contact"
+            class="uppercase font-bold border-2 border-clr-white py-2 pt-3 px-4 transition duration-300 hover:bg-white hover:text-clr-primary"
+          >
+            Contact
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="flex gap-5 items-center">
+      <button id="theme-switcher ">
+        <i
+          class="uil uil-sun text-5xl sun-icon transition duration-300 hover:text-clr-primary"
+        ></i>
+        <i
+          class="uil uil-moon text-5xl moon-icon transition duration-300 hover:text-clr-primary"
+        ></i>
+      </button>
+      <button class="lg:hidden" id="menu-btn">
+        <i class="uil uil-bars text-5xl"></i>
+      </button>
+      <button class="hidden lg:hidden" id="close-btn">
+        <i class="uil uil-times text-5xl"></i>
+      </button>
+      <a
+        href="#contact"
+        class="hidden lg:block uppercase font-bold text-xl border-2 border-clr-white py-2 pt-3 px-4 transition duration-300 hover:bg-white hover:text-clr-primary"
+      >
+        Contact
+      </a>
+    </div>
+  </Wrapper>
+</header>
+
+<style>
+  .nav-link {
+    @apply transition-colors duration-300 hover:text-clr-primary;
+  }
+</style>
+
+<script>
+  const sunIcon = document.querySelector(".sun-icon") as HTMLElement
+  const moonIcon = document.querySelector(".moon-icon") as HTMLElement
+
+  const isDarkMode = localStorage.getItem("darkMode") === "true"
+
+  if (isDarkMode) {
+    document.documentElement.classList.add("dark")
+    sunIcon.classList.add("hidden")
+  } else {
+    moonIcon.classList.add("hidden")
+  }
+
+  const toggleDarkMode = () => {
+    const htmlElement = document.documentElement as HTMLHtmlElement
+
+    htmlElement.classList.toggle("dark")
+    sunIcon.classList.toggle("hidden")
+    moonIcon.classList.toggle("hidden")
+
+    const isDarkMode = htmlElement.classList.contains("dark")
+    localStorage.setItem("darkMode", isDarkMode.toString())
+  }
+
+  const darkModeToggle = document.getElementById("theme-switcher")
+  if (darkModeToggle) {
+    darkModeToggle.addEventListener("click", toggleDarkMode)
+  }
+
+  darkModeToggle?.addEventListener("click", toggleDarkMode)
+
+  const nav = document.getElementById("nav")
+  const menuButton = document.getElementById("menu-btn")
+  const closeButton = document.getElementById("close-btn")
+
+  const toggleNavMenu = () => {
+    nav?.classList.toggle("hidden")
+    menuButton?.classList.toggle("hidden")
+    closeButton?.classList.toggle("hidden")
+  }
+
+  menuButton?.addEventListener("click", toggleNavMenu)
+
+  closeButton?.addEventListener("click", toggleNavMenu)
+
+  nav?.addEventListener("click", toggleNavMenu)
+</script>
