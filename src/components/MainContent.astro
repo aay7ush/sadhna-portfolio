@@ -20,9 +20,9 @@ const { title, buttonName, buttonIcon } = Astro.props
       <>
         <h2 class="text-5xl sm:text-6xl lg:text-7xl text-clr-primary font-bold dark:text-white">
           Hello, I'm{" "}
-          <span class="text-gradient whitespace-nowrap">{title}</span>
+          <span class="text-gradient md:whitespace-nowrap">{title}</span>
         </h2>
-        <div class="flex gap-3 items-center justify-center lg:justify-normal">
+        <div class="hidden sm:flex gap-3 items-center justify-center lg:justify-normal">
           <span class="w-20 rounded-md h-1 bg-clr-yellow" />
           <h4 class="typing-text text-4xl font-medium text-clr-yellow inline" />
         </div>
@@ -73,15 +73,6 @@ const { title, buttonName, buttonIcon } = Astro.props
       typing 1s steps(15, end),
       blink-caret 0.5s step-end infinite;
   }
-
-  /* @keyframes typing {
-    from {
-      width: 0;
-    }
-    to {
-      width: 100%;
-    }
-  } */
 
   @keyframes blink-caret {
     from,
